@@ -1,0 +1,1 @@
+import{j as s,r as n}from"./index-e668cc8b.js";const o=({children:a})=>s.jsx(n.Suspense,{fallback:s.jsx("div",{className:"container",children:s.jsx("h1",{className:"loading",children:"Loading..."})}),children:a});export{o as default};
