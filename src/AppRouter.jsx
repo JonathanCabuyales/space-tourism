@@ -12,7 +12,8 @@ function AppRouter() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <IndexPage />
+      element: <IndexPage />,
+
     },
     {
       path: "/destination",
@@ -26,7 +27,9 @@ function AppRouter() {
       path: "/technology",
       element: <TechPage />
     }
-  ])
+  ],{
+    basename: "https://jonathancabuyales.github.io/space-tourism/"
+  })
   return (
     <LoadingComponent>
       <RouterProvider router={router}/>
