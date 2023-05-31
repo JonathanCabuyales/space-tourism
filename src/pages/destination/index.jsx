@@ -3,6 +3,7 @@ import { useState, useRef, useEffect } from 'react';
 import HeaderNavComponent from '../../components/header/headerNavComponent';
 import { destinations } from '../../data/data.json';
 import "./destination.css";
+import { Outlet } from 'react-router-dom';
 
 
 // mostrat imagenes dinamicas
@@ -25,6 +26,7 @@ const Destination = () => {
     return (
         <div className='container__destination'>
             <HeaderNavComponent />
+            <Outlet />
             <section className='destination__main'>
                 <div className='destination__main__text'>
                     <h4 className='destination__h4'><span className='destination__number'>01 </span>PICK YOUR DESTINATION</h4>
