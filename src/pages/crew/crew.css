@@ -1,5 +1,5 @@
 :root{
-    --background-crew: url('../../assets/crew/background-crew-mobile.jpg') no-repeat center;
+    --background-crew: url('/crew/background-crew-mobile.jpg') no-repeat center;
 }
 *{
     margin: 0;
@@ -16,7 +16,7 @@
     grid-template-rows: min-content 90%;
     /* border: 1px solid #f00; */
     padding: 20px;
-    background: var(--background-home);
+    background: var(--background-crew);
     background-size: cover;
     color: #fff;
 
@@ -164,7 +164,7 @@
         align-items: center;
         flex-direction: column;
         /* border: 1px solid #ff0; */
-        background: url('../../assets/crew/background-crew-tablet.jpg') no-repeat center;
+        background: url('/crew/background-crew-tablet.jpg') no-repeat center;
         background-size: cover;
     } 
 
@@ -254,7 +254,7 @@
 
 @media (width >= 1125px) {
     .crew{
-        background: url('../../assets/crew/background-crew-desktop.jpg') no-repeat center;
+        background: url('/crew/background-crew-desktop.jpg') no-repeat center;
         background-size: cover;
         padding: 2.2em 0 0;
         height: 100vh;

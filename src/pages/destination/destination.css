@@ -8,7 +8,7 @@
 .container__destination {
     /* width: 100vw; */
     display: grid;
-    background: url('../../assets/destination/background-destination-mobile.jpg') no-repeat center;
+    background: url('/destination/background-destination-mobile.jpg') no-repeat center;
     background-size: cover;
     color: #fff;
     grid-template-columns: 1fr;
@@ -235,7 +235,7 @@
 @media (width >= 625px) {
     .container__destination{
         display: flex;
-        background: url('../../assets/destination/background-destination-tablet.jpg') no-repeat center;
+        background: url('/destination/background-destination-tablet.jpg') no-repeat center;
         background-size: cover;
         flex-direction: column;
         /* border: 1px solid #f00; */
@@ -366,7 +366,7 @@
     .container__destination {
         display: flex;
         /* justify-content: space-between; */
-        background: url('../../assets/destination/background-destination-desktop.jpg') no-repeat center;
+        background: url('/destination/background-destination-desktop.jpg') no-repeat center;
         background-size: cover;
         padding: 2.2em 0 0;
         height: 100vh;

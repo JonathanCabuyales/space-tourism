@@ -1,5 +1,5 @@
 :root {
-    --background-icon: url('../../assets/shared/icon-hamburger.svg');
+    --background-icon: url('/shared/icon-hamburger.svg');
 }
 
 .header {
@@ -28,7 +28,7 @@
 }
 
 .header__menu--active {
-    --background-icon: url('../../assets/shared/icon-close.svg');
+    --background-icon: url('/shared/icon-close.svg');
     background: var(--background-icon);
     background-size: cover;
     width: 2.2em;

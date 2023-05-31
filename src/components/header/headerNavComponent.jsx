@@ -1,18 +1,17 @@
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
-import logo from '../../assets/shared/logo.svg';
+// import logo from '../../assets/shared/logo.svg';
 import './headerNavComponent.css';
 import { Link } from 'react-router-dom';
-import { useMemo } from 'react';
 
 
 
 const HeaderNavComponent = () => {
   const menu__list = useRef();
   const menu__list__tablet = useRef();
-  const line = useRef();
-  const [width, setWidth] = useState(0);
+
+  
   
   const [menuActive, setMenuActive] = useState(false);
   const [lista, setLista] = useState([
@@ -46,8 +45,8 @@ const HeaderNavComponent = () => {
   ]);
   // let cursor = '';
   // let index = 0;
-  let index = parseInt(JSON.parse(localStorage.getItem("index"))) ?? 0;
-  // console.log(index);
+  let index = JSON.parse(localStorage.getItem("index")) ?? 0;
+  console.log(index);
   const [cursor, setcursor] = useState(index);
   const handleList = (e, i) => {
     e.target.classList.add("hover");
@@ -82,7 +81,7 @@ const HeaderNavComponent = () => {
   return (
     <header className="header">
       <figure className="header__figure">
-        <img src={logo} alt="logo" className='header__img' />
+        <img src="./shared/logo.svg" alt="logo" className='header__img' />
       </figure>
       <figure className={menuActive ? 'header__menu--active' : 'header__menu'} onClick={handleMenu} >
         {/* <img src={menuActive ? closeIcon : menu} alt="logo" id='header__menu' /> */}
@@ -91,7 +90,7 @@ const HeaderNavComponent = () => {
         <ul className='nav__list' >
           {
             lista.map((value, i) => (
-              <Link onClick={() => handleMenuItems(i)} onMouseEnter={(e) => handleList(e, i)} key={value?.id} className={`${value.className} ${cursor === i ? 'remove__cursor' : ''}`} onMouseLeave={removeClass} to={value.to}>
+              <Link onClick={() => handleMenuItems(i)} onMouseEnter={(e) => handleList(e, i)} key={value?.id} className={`${value.className} ${cursor === i ? 'active remove__cursor' : ''}`} onMouseLeave={removeClass} to={value.to}>
                 {value.name}</Link>
             ))
           }

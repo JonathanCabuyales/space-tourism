@@ -1,7 +1,7 @@
+import { useEffect } from 'react';
 import { lazy } from 'react';
-import { HashRouter } from 'react-router-dom';
 import { createHashRouter } from 'react-router-dom';
-import { createBrowserRouter, createRoutesFromElements, RouterProvider, BrowserRouter, Route } from 'react-router-dom';
+import { RouterProvider } from 'react-router-dom';
 
 const IndexPage = lazy(() => import('./pages/indexPage'));
 const DestinationPage = lazy(() => import('./pages/destination'));
@@ -33,26 +33,15 @@ function AppRouter() {
   ]
   );
 
-  // const router = createHashRouter(
-  //   createRoutesFromElements(
-  //     <>
-  //       <Route path='/' element={<IndexPage />}  />,
-  //       <Route path='/destination' element={<DestinationPage />} />
-  //       <Route path='/crew' element={<PageCrew />} />
-  //       <Route path='/technology' element={<TechPage />} />
-  //     </>
-  //   ),
-  //   {
-  //     basename: "/space-tourism/"
-  //   }
-  // )
+  useEffect(() => {
+    localStorage.setItem('index', JSON.stringify(0));
+  
+    return () => {
+      localStorage.removeItem('index');
+    }
+  }, [])
+  
 
-  // const router = <HashRouter>
-  //   <Route path='/' element={<IndexPage />} />
-  //   <Route path='/destination' element={<DestinationPage />} />
-  //   <Route path='/crew' element={<PageCrew />} />
-  //   <Route path='/technology' element={<TechPage />} />
-  // </HashRouter>
   return (
     <LoadingComponent>
       <RouterProvider router={router} />

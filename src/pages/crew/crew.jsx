@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 
 import "./crew.css";
 import { crew } from "../../data/data.json";
-import circle from "../../assets/circle.svg";
 import HeaderNavComponent from "../../components/header/headerNavComponent";
 
 const Crew = () => {
