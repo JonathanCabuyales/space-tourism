@@ -28,7 +28,7 @@ function AppRouter() {
       element: <TechPage />
     }
   ],{
-    basename: "/space-tourism/"
+    basename: "/"
   })
   return (
     <LoadingComponent>
