@@ -16,19 +16,19 @@ function AppRouter() {
 
     },
     {
-      path: "/destination",
+      path: "destination",
       element: <DestinationPage />
     },
     {
-      path: "/crew",
+      path: "crew",
       element: <PageCrew />
     },
     {
-      path: "/technology",
+      path: "technology",
       element: <TechPage />
     }
   ],{
-    basename: "/"
+    basename: "/space-tourism/"
   })
   return (
     <LoadingComponent>
