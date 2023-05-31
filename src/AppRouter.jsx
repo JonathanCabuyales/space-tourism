@@ -2,7 +2,7 @@ import { lazy } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 const IndexPage = lazy(() => import('./pages/indexPage'));
-const DestinationPage = lazy(() => import('./pages/destination/destination'));
+const DestinationPage = lazy(() => import('./pages/destination'));
 const PageCrew = lazy(() => import('./pages/crew/crew'));
 const TechPage = lazy(() => import('./pages/technology/index'));
 
