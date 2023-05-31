@@ -4,8 +4,9 @@ import { NavLink } from 'react-router-dom';
 import logo from '../../assets/shared/logo.svg';
 import './headerNavComponent.css';
 import { Link } from 'react-router-dom';
+import { useMemo } from 'react';
 
-// localStorage.setItem('index', `${0}`);
+
 
 const HeaderNavComponent = () => {
   const menu__list = useRef();
@@ -46,6 +47,7 @@ const HeaderNavComponent = () => {
   // let cursor = '';
   // let index = 0;
   let index = parseInt(JSON.parse(localStorage.getItem("index"))) ?? 0;
+  // console.log(index);
   const [cursor, setcursor] = useState(index);
   const handleList = (e, i) => {
     e.target.classList.add("hover");
