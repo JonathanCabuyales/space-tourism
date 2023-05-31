@@ -3,8 +3,9 @@ import { NavLink } from 'react-router-dom';
 
 import logo from '../../assets/shared/logo.svg';
 import './headerNavComponent.css';
+import { Link } from 'react-router-dom';
 
-sessionStorage.setItem('index', `${0}`);
+// localStorage.setItem('index', `${0}`);
 
 const HeaderNavComponent = () => {
   const menu__list = useRef();
@@ -44,7 +45,7 @@ const HeaderNavComponent = () => {
   ]);
   // let cursor = '';
   // let index = 0;
-  let index = parseInt(JSON.parse(sessionStorage.getItem("index"))) || 0;
+  let index = parseInt(JSON.parse(localStorage.getItem("index"))) ?? 0;
   const [cursor, setcursor] = useState(index);
   const handleList = (e, i) => {
     e.target.classList.add("hover");
@@ -71,7 +72,7 @@ const HeaderNavComponent = () => {
   }
 
   const handleMenuItems = (e) => {
-    sessionStorage.setItem('index', JSON.stringify(e));
+    localStorage.setItem('index', JSON.stringify(e));
     // setActive((prev) => prev + e)
   }
 
@@ -88,8 +89,8 @@ const HeaderNavComponent = () => {
         <ul className='nav__list' >
           {
             lista.map((value, i) => (
-              <NavLink onClick={() => handleMenuItems(i)} onMouseEnter={(e) => handleList(e, i)} key={value?.id} className={`${value.className} ${cursor === i ? 'remove__cursor' : ''}`} onMouseLeave={removeClass} to={value.to}>
-                {value.name}</NavLink>
+              <Link onClick={() => handleMenuItems(i)} onMouseEnter={(e) => handleList(e, i)} key={value?.id} className={`${value.className} ${cursor === i ? 'remove__cursor' : ''}`} onMouseLeave={removeClass} to={value.to}>
+                {value.name}</Link>
             ))
           }
         </ul>

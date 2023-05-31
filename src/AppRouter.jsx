@@ -1,9 +1,7 @@
 import { lazy } from 'react';
-import { BrowserRouter } from 'react-router-dom';
-import { Routes } from 'react-router-dom';
-import { Route } from 'react-router-dom';
-import { createRoutesFromElements } from 'react-router-dom';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
+import { createHashRouter } from 'react-router-dom';
+import { createBrowserRouter, createRoutesFromElements, RouterProvider, BrowserRouter, Route } from 'react-router-dom';
 
 const IndexPage = lazy(() => import('./pages/indexPage'));
 const DestinationPage = lazy(() => import('./pages/destination'));
@@ -13,42 +11,53 @@ const TechPage = lazy(() => import('./pages/technology/index'));
 
 const LoadingComponent = lazy(() => import('./components/loading/loading'));
 function AppRouter() {
-  // const router = createBrowserRouter([
-  //   {
-  //     path: "/",
-  //     element: <IndexPage />,
+  const router = createHashRouter([
+    {
+      path: "/",
+      element: <IndexPage />,
 
-  //   },
-  //   {
-  //     path: "destination",
-  //     element: <DestinationPage />
-  //   },
-  //   {
-  //     path: "crew",
-  //     element: <PageCrew />
-  //   },
-  //   {
-  //     path: "technology",
-  //     element: <TechPage />
-  //   }
-  // ])
-  // const router = createBrowserRouter(
+    },
+    {
+      path: "destination",
+      element: <DestinationPage />
+    },
+    {
+      path: "crew",
+      element: <PageCrew />
+    },
+    {
+      path: "technology",
+      element: <TechPage />,
+
+    }
+  ]
+  );
+
+  // const router = createHashRouter(
   //   createRoutesFromElements(
-
-  //   )
+  //     <>
+  //       <Route path='/' element={<IndexPage />}  />,
+  //       <Route path='/destination' element={<DestinationPage />} />
+  //       <Route path='/crew' element={<PageCrew />} />
+  //       <Route path='/technology' element={<TechPage />} />
+  //     </>
+  //   ),
+  //   {
+  //     basename: "/space-tourism/"
+  //   }
   // )
+
+  // const router = <HashRouter>
+  //   <Route path='/' element={<IndexPage />} />
+  //   <Route path='/destination' element={<DestinationPage />} />
+  //   <Route path='/crew' element={<PageCrew />} />
+  //   <Route path='/technology' element={<TechPage />} />
+  // </HashRouter>
   return (
     <LoadingComponent>
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<IndexPage />}>
-          </Route>
-          <Route path='destination' element={<DestinationPage />} />
-          <Route path='crew' element={<PageCrew />} />
-          <Route path='technology' element={<TechPage />} />
-        </Routes>
-      </BrowserRouter>
+      <RouterProvider router={router} />
     </LoadingComponent>
+
   )
 }
 
