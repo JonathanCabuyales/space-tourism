@@ -28,7 +28,7 @@ function AppRouter() {
       element: <TechPage />
     }
   ],{
-    basename: "https://jonathancabuyales.github.io/space-tourism/"
+    basename: "/space-tourism/"
   })
   return (
     <LoadingComponent>
